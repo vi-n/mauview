@@ -134,6 +134,10 @@ func (flex *Flex) SetFocused(comp Component) {
 	}
 }
 
+func (flex *Flex) GetFocused() Component {
+	return flex.focused.target
+}
+
 func (flex *Flex) OnMouseEvent(event MouseEvent) bool {
 	if flex.focused != nil && flex.focused.screen.IsInArea(event.Position()) {
 		screen := flex.focused.screen
